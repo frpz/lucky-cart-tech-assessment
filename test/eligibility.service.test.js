@@ -306,7 +306,7 @@ describe('Eligibility', () => {
       const actualEligibility = eligibilityService.isEligible(cart, criteria);
       should(actualEligibility).be.true();
     });
-    it('should be eligible when array sub object condition with two elements is not fulfilled', () => {
+    it('should not be eligible when array sub object condition with two elements is not fulfilled', () => {
       const cart = {products:[{quantity:1}, {quantity: 2}]};
       const criteria = {'products.quantity': 3};
       const eligibilityService = new EligibilityService();
